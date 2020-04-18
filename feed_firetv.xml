@@ -1,0 +1,48 @@
+---
+layout: null
+---
+
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:media="http://search.yahoo.com/mrss/"
+    xmlns:atom="http://www.w3.org/2005/Atom">
+   <channel>
+      <title>{{ site.title }}</title>
+      <link>{{ site.url }}{{ site.baseurl }}</link>
+      <language>en-us</language>
+      <pubDate>{{ site.time | date: "%a, %d %b %Y %T %z" }}</pubDate>
+      <lastBuildDate>{{ site.time | date: "%a, %d %b %Y %T %z" }}</lastBuildDate>
+      <managingEditor>{{ site.email }} ({{ site.author }})</managingEditor>
+      <description>{{ site.description }}</description>
+      <image>
+          <link>{{ site.url }}</link>
+          <title>{{ site.title }}</title>
+          <url>{{ site.logo | prepend: "/images/" | prepend: site.url }}</url>
+          <description>{{ site.description }}</description>
+          <height>114</height>
+          <width>114</width>
+      </image>
+      <atom:link href="{{site.url}}/feed_firetv.xml" rel="self" type="application/rss+xml" />
+      {% for item in site.data.feed.movies %}
+      <item>
+         <title>{{ item.title }}</title>
+         <pubDate>{{ item.content.dateAdded | date: "%a, %d %b %Y %T %z" }}</pubDate>
+         <link>{{ item.title | slugify | prepend:"/" | prepend: site.url | append: "/" }} </link>
+         <description>{{ item.longDescription }}</description>
+         <guid isPermaLink="false">{{ item.title | slugify | prepend:"/" | prepend: site.url | append: "/" }}</guid>
+         <media:category>{{ item.tags | sort | join: ", "}}</media:category>
+         <media:content
+             url="{{ item.content.videos[0].url }}"
+             language="en-us"
+             duration="{{ item.content.duration }}"
+             medium="video"
+             isDefault="true">
+            <media:title type="plain">{{ item.title }}</media:title>
+            <media:description type="html">{{ item.longDescription }}</media:description>
+            <media:thumbnail url="{{ item.thumbnail }}" />
+            <media:credit role="author" scheme="urn:ebu">{{ site.author }}</media:credit>
+            <media:copyright url="{{ site.copyright_url }}">{{ site.copyright_license }}</media:copyright>
+         </media:content>
+      </item>
+      {% endfor %}
+   </channel>
+</rss>
