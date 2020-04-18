@@ -1,0 +1,19 @@
+backend:
+  name: github
+  repo: wajidbux/MRSS-feed
+  branch: master
+
+media_folder: "images/thumbs" # Media files will be stored in the repo under images/uploads
+
+collections:
+  - name: "posts"
+    label: "posts"
+    folder: "_posts"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    fields: 
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Description", name: "desc", widget: "markdown"}
+      - {label: "Featured Image", name: "media_thumbnail", widget: "image"}
+      - {label: "Media", name: "media_url", widget: "string" }
+      - {label: "Duration", name: "duration", widget: "number"}
