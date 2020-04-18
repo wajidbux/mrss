@@ -27,7 +27,7 @@
 
 title: Movieland
 email: wajid_bux@yahoo.com
-baseurl: /movieland
+#baseurl: /movieland
 url: https://movieland.netlify.app
 #baseurl_media: /
 #github_username:  amzn-tomjoht
