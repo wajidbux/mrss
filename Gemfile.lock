@@ -242,7 +242,6 @@ GEM
     tzinfo-data (1.2019.3)
       tzinfo (>= 1.0.0)
     unicode-display_width (1.7.0)
-    wdm (0.1.1)
     zeitwerk (2.3.0)
 
 PLATFORMS
@@ -256,7 +255,6 @@ DEPENDENCIES
   minima
   nokogiri (>= 1.10.8)
   tzinfo-data
-  wdm (>= 0.1.0)
 
 RUBY VERSION
    ruby 2.6.6p146

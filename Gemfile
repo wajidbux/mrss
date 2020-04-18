@@ -24,7 +24,6 @@ group :jekyll_plugins do
    gem "jekyll-feed", "~> 0.6"
    gem "nokogiri", ">= 1.10.8"
    gem "activesupport", ">= 4.1.11"
-    gem 'wdm', '>= 0.1.0'
   end
 
 #Windows does not include zoneinfo files, so bundle the tzinfo-data gem
