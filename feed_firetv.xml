@@ -30,7 +30,7 @@ layout: null
          <description>{{ item.longDescription }}</description>
          <guid isPermaLink="false">{{ item.title | slugify | prepend:"/" | prepend: site.url | append: "/" }}</guid>
          <media:category scheme="urn:tags">{{ item.tags | sort | join: " " }}</media:category>
-         <media:content>
+         <media:content
              url="{{ item.content.videos[0].url }}"
              language="en-us"
              duration="{{ item.content.duration }}"
