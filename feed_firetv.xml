@@ -29,7 +29,7 @@ layout: null
          <link>{{ item.title | slugify | prepend:"/" | prepend: site.url | append: "/" }} </link>
          <description>{{ item.longDescription }}</description>
          <guid isPermaLink="false">{{ item.title | slugify | prepend:"/" | prepend: site.url | append: "/" }}</guid>
-         <media:category>{{ item.tags | join: " / "  }}</media:category>
+         <media:category>{{ item.tags | join: "/"  }}</media:category>
          <media:content
              url="{{ item.content.videos[0].url }}"
              language="en-us"
