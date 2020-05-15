@@ -16,12 +16,12 @@ layout: null
         <pubDate>{{ item.content.dateAdded | date_to_xmlschema }}</pubDate>
         <media:title>{{ item.title }}</media:title>
         <media:description>{{ item.longDescription }}</media:description>
-        {% for cat in item.category %}
-        <media:category>{{ cat }}</media:category>
+        {% for cat in site.data.feed %}
+        <media:category>{{ item.tags }}</media:category>
         {% endfor %}
         <media:thumbnail url="{{ item.thumbnail }}" />
          <media:content
-             url="{{ item.video.url }}"
+             url="{{ item.content.videos[0].url }}"
              duration="{{ item.content.duration }}"
              language="en-us"
          />
